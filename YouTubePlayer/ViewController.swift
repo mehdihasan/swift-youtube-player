@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var youTubePlayerView: YTPlayerView!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        youTubePlayerView.load(withVideoId: "M7lc1UVf-VE")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
