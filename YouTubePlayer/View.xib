@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="yt_cell" rowHeight="214" id="uXU-a1-z7H" customClass="ViewCell" customModule="YouTubePlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uXU-a1-z7H" id="dVS-zZ-AcY">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="213.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYE-DN-LWY" customClass="YTPlayerView">
+                        <rect key="frame" x="8" y="8" width="359" height="198"/>
+                        <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="cYE-DN-LWY" secondAttribute="bottom" constant="8" id="Fhl-C1-Svo"/>
+                    <constraint firstAttribute="trailing" secondItem="cYE-DN-LWY" secondAttribute="trailing" constant="8" id="Gx1-ry-ua7"/>
+                    <constraint firstItem="cYE-DN-LWY" firstAttribute="top" secondItem="dVS-zZ-AcY" secondAttribute="top" constant="8" id="Xc1-Ja-863"/>
+                    <constraint firstItem="cYE-DN-LWY" firstAttribute="leading" secondItem="dVS-zZ-AcY" secondAttribute="leading" constant="8" id="tfx-yI-AsI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="0.72739404251229911" blue="0.66960312673309552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="playerView" destination="cYE-DN-LWY" id="Vd9-Hy-e2v"/>
+            </connections>
+            <point key="canvasLocation" x="554.5" y="40"/>
+        </tableViewCell>
+    </objects>
+</document>

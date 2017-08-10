@@ -7,25 +7,40 @@
 //
 
 import UIKit
-import youtube_ios_player_helper
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var youTubePlayerView: YTPlayerView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let videoIds = ["M7lc1UVf-VE", "D4Q145EOdiM", "hrvgsk8eX24", "omqcuD1AxUU", "-3uiFhI18g8", "vg9cNFPQFqM"];
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        youTubePlayerView.load(withVideoId: "M7lc1UVf-VE")
-        // Do any additional setup after loading the view, typically from a nib.
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "View", bundle: nil), forCellReuseIdentifier: "yt_cell")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
+
+extension ViewController: UITableViewDataSource {
+    
+    // MARK: uitableview datasource
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "yt_cell", for: indexPath) as! ViewCell
+        cell.playerView.load(withVideoId: self.videoIds[indexPath.row])
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videoIds.count
+    }
+
+}
